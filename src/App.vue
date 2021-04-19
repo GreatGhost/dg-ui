@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <!-- 按钮组件封装 -->
+    <div class="btn-group">
+      <dg-button type="primary" >按钮</dg-button>
+      <dg-button type="danger">按钮</dg-button>
+      <dg-button type="warning">按钮</dg-button>
+      <dg-button type="info">按钮</dg-button>
+      <dg-button type="success">按钮</dg-button>
+      <dg-button :plain="true">镂空</dg-button>
+    </div>
+    
+    <!-- 鏤空 -->
+    
+    <div class="btn-group">
+      <dg-button plain  type="primary" >按钮</dg-button>
+      <dg-button plain type="danger">按钮</dg-button>
+      <dg-button plain type="warning">按钮</dg-button>
+      <dg-button plain type="info">按钮</dg-button>
+      <dg-button plain type="success">按钮</dg-button>
+      <dg-button plain >镂空</dg-button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import DgButton from './components/DgButton.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {DgButton}
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .btn-group{
+    .one-button{
+      margin-right: 20px;
+    }
+  }
 </style>
