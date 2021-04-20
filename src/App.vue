@@ -1,34 +1,46 @@
 <template>
   <div id="app">
+    <DialogDemos></DialogDemos> 
+    <button @click="aShow=!aShow">开关</button>
+    <transition name="fade">
+      <span v-if="aShow" style="background:red;">aa</span>
+    </transition> 
 
-    <!-- 按钮组件封装 -->
-    <div class="btn-group">
-      <dg-button type="primary" >按钮</dg-button>
-      <dg-button type="danger">按钮</dg-button>
-      <dg-button type="warning">按钮</dg-button>
-      <dg-button type="info">按钮</dg-button>
-      <dg-button type="success">按钮</dg-button>
-      <dg-button :plain="true">镂空</dg-button>
-    </div>
-    
-    <!-- 鏤空 -->
-    
-    <div class="btn-group">
-      <dg-button plain  type="primary" >按钮</dg-button>
-      <dg-button plain type="danger">按钮</dg-button>
-      <dg-button plain type="warning">按钮</dg-button>
-      <dg-button plain type="info">按钮</dg-button>
-      <dg-button plain type="success">按钮</dg-button>
-      <dg-button plain >镂空</dg-button>
-    </div>
+    <transition name="fade">
+    <p v-if="aShow">hello</p>
+  </transition>
   </div>
 </template>
 
 <script>
-import DgButton from './components/DgButton.vue';
+import ButtonDemos from './examples/buttons'
+import DialogDemos from './examples/dialog'
+import DemoSync from './components/demo'
 export default {
   name: "App",
-  components: {DgButton}
+  data(){
+    return {
+      money:100,
+      visible:false,
+      aShow:false
+    }
+  },
+  components:{
+    ButtonDemos,
+    DialogDemos,
+    DemoSync
+  },
+  methods:{
+    login(e){
+      console.log('单击事件',e)
+    },
+    fn1(e){
+      this.money=e;
+    },
+    fn2(e){
+      this.visible=e;
+    }
+  }
 };
 </script>
 
@@ -38,4 +50,27 @@ export default {
       margin-right: 20px;
     }
   }
+  // 进入
+  .fade-enter{
+    opacity: 0;
+  }
+  // .fade-enter-to{
+  //   opacity: 1;
+  // }
+  .fade-enter-active{
+    transition:opacity 1s;
+  }
+// .fade-enter-active, .fade-leave-active {
+//   transition: opacity .5s;
+// }
+  // 离开
+  // .fade-leave{
+  //   opacity: 1;
+  // }
+  // .fade-leave-to{
+  //   opacity: 0;
+  // }
+  // .fade-leave-active{
+  //   transition: all .5 ease-out;
+  // }
 </style>

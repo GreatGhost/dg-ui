@@ -1,16 +1,20 @@
 <template>
-  <div
+  <button
     class="one-button"
     :class="[
       `one-button-${type}`,
       {
         'is-plain': plain,
-        'is-circle':circle
+        'is-circle':circle,
+        'is-round':round,
+        'is-disabled':disabled
       },
     ]"
+    @click="handleClick"
   >
-    <slot></slot>
-  </div>
+    <i :class="['iconfont',icon,]" v-if="icon"></i>
+    <span v-if="slotVnode"><slot></slot></span>
+  </button>
 </template>
 
 <script>
@@ -42,10 +46,32 @@ export default {
     },
 
     // 圓角
-
+    round:{
+      type:Boolean,
+      default:false
+    },
     circle:{
       type:Boolean,
       default:false
+    },
+
+  // icon
+   icon:{
+     type:String,
+     default:''
+   }
+
+  },
+  computed:{
+    slotVnode(){
+      return this.$slots.default
+    }
+  },
+  created(){
+  },
+  methods:{
+    handleClick(e){
+      this.$emit('click',e)
     }
   }
 };
@@ -212,6 +238,38 @@ export default {
 }
 // disabled属性
 .one-button.is-disabled {
-  cursor: no-drop;
+    cursor: no-drop;
+    color: #c0c4cc;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #fff;
+    border-color: #ebeef5;
+}
+.one-button-primary.is-disabled,
+.one-button-primary.is-disabled:active,
+.one-button-primary.is-disabled:hover
+.one-button-primary.is-disabled:focus{
+      color: #fff;
+    background-color: #a0cfff;
+    border-color: #a0cfff;
+}
+
+.one-button-danger.is-disabled,
+.one-button-danger.is-disabled:active,
+.one-button-danger.is-disabled:hover
+.one-button-danger.is-disabled:focus{
+    color: #fff;
+    background-color: #fab6b6;
+    border-color: #fab6b6;
+}
+
+.one-button .mr12{
+  margin-right: 12px;
+}
+.one-button .ml12{
+  margin-left: 12px;
+}
+.one-button [class*=iconfont]+span{
+  margin-left:12px;
 }
 </style>

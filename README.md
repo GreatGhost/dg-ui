@@ -49,6 +49,28 @@ disabled 是否禁用 boolean 默认false
 icon 是否有icon
 
 
+### dialog
+- vue过渡动画
+- sync修饰符:是一个语法糖
+- 具名插槽 v-slot
+- 插槽构成 header 、body、footer 
+- 控制dialog显示、隐藏
+- scoped的作用
+1.给样式选择器添加一个随机属性选择器
+2.给元素添加一个data属性
+- ::v-deep .one-button:first-child{}
+``` javascript
+
+    // 老语法
+    <template slot="title"></template>
+    // 新语法
+    <template v-slot:title>
+        
+    </template>
+
+```
+
+
 ### 前端代码规范
 
 [如何让一个前端项目变得更加规范？]()
