@@ -1,10 +1,12 @@
-import DgButton from './DgButton'
-import DgDialog from './dialog'
+import Button from './DgButton'
+import Dialog from './dialog'
+import Input from './input'
 import Vue from 'vue'
 
 const components = [
-  DgButton,
-  DgDialog
+  Button,
+  Dialog,
+  Input
 ]
 
 components.forEach((component) => {

@@ -69,6 +69,19 @@ icon 是否有icon
     </template>
 
 ```
+### input组件封装
+- 属性
+1.type
+2.placeholder
+3.disabled
+4.清空value
+5.密码框是否可见
+- 事件
+1.change
+2.blur
+3.focus
+
+- 基本结构
 
 
 ### 前端代码规范

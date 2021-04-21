@@ -1,14 +1,7 @@
 <template>
   <div id="app">
-    <DialogDemos></DialogDemos> 
-    <button @click="aShow=!aShow">开关</button>
-    <transition name="fade">
-      <span v-if="aShow" style="background:red;">aa</span>
-    </transition> 
-
-    <transition name="fade">
-    <p v-if="aShow">hello</p>
-  </transition>
+    <InputDemo></InputDemo>
+    
   </div>
 </template>
 
@@ -16,6 +9,7 @@
 import ButtonDemos from './examples/buttons'
 import DialogDemos from './examples/dialog'
 import DemoSync from './components/demo'
+import InputDemo from './examples/input'
 export default {
   name: "App",
   data(){
@@ -28,7 +22,8 @@ export default {
   components:{
     ButtonDemos,
     DialogDemos,
-    DemoSync
+    DemoSync,
+    InputDemo
   },
   methods:{
     login(e){
