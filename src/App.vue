@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <InputDemo></InputDemo>
-    
+    <SwitchDemo></SwitchDemo>
   </div>
 </template>
 
@@ -10,6 +9,7 @@ import ButtonDemos from './examples/buttons'
 import DialogDemos from './examples/dialog'
 import DemoSync from './components/demo'
 import InputDemo from './examples/input'
+import SwitchDemo from './examples/switch'
 export default {
   name: "App",
   data(){
@@ -23,7 +23,8 @@ export default {
     ButtonDemos,
     DialogDemos,
     DemoSync,
-    InputDemo
+    InputDemo,
+    SwitchDemo
   },
   methods:{
     login(e){

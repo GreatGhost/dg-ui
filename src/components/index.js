@@ -1,12 +1,14 @@
 import Button from './DgButton'
 import Dialog from './dialog'
 import Input from './input'
+import Switch from './swtich'
 import Vue from 'vue'
 
 const components = [
   Button,
   Dialog,
-  Input
+  Input,
+  Switch
 ]
 
 components.forEach((component) => {
