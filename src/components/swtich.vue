@@ -1,18 +1,18 @@
 <template>
   <div
-      for=""
-      @click="handleClick"
-      class="one-switch"
-      :class="{
-        'is-checked': value
-      }"
+    for=""
+    @click="handleClick"
+    class="one-switch"
+    :class="{
+      'is-checked': value
+    }"
   >
     <span class="one-switch_core" ref="core">
       <span class="one-switch_button"></span>
     </span>
 
     <!-- input -->
-    <input type="checkbox"  :name="name" ref="input">
+    <input type="checkbox" class="one-switch_input" :name="name" ref="input" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
   },
   mounted() {
     this.setColor();
-    this.$refs.input.checked=this.value;
+    this.$refs.input.checked = this.value;
   },
   methods: {
     handleClick() {
@@ -49,7 +49,7 @@ export default {
       // 这里调用$nextTick
       this.$nextTick(() => {
         this.setColor();
-        this.$refs.input.checked=this.value;
+        this.$refs.input.checked = this.value;
       });
     },
     setColor() {
@@ -96,12 +96,12 @@ export default {
       background-color: #fff;
     }
   }
-  .one-switch_input{
+  .one-switch_input {
     position: absolute;
     width: 0;
     height: 0;
     opacity: 0;
-    margin:0;
+    margin: 0;
   }
 }
 

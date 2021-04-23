@@ -6,6 +6,8 @@ import Radio from "./radio";
 import RadioGroup from "./radio-group";
 import CheckBox from "./checkbox";
 import CheckboxGroup from "./checkbox-group";
+import Form from "./form";
+import FormItem from "./form-item";
 import Vue from "vue";
 
 const components = [
@@ -16,7 +18,9 @@ const components = [
   Radio,
   RadioGroup,
   CheckBox,
-  CheckboxGroup
+  CheckboxGroup,
+  Form,
+  FormItem
 ];
 
 components.forEach(component => {

@@ -1,7 +1,10 @@
 <template>
-  <div class="one-input" :class="{
-      'one-input_suffix':showSuffix
-  }">
+  <div
+    class="one-input"
+    :class="{
+      'one-input_suffix': showSuffix
+    }"
+  >
     <input
       class="one-input_inner"
       :class="{
@@ -12,16 +15,19 @@
       :value="value"
       :disabled="disabled"
       @input="handleInput"
-      
     />
     <span class="icon-suffix">
-        <i class="iconfont iconclose" v-if="value && clearable" @click="close"></i>
-        <i 
+      <i
+        class="iconfont iconclose"
+        v-if="value && clearable"
+        @click="close"
+      ></i>
+      <i
         class="iconfont iconbrowse"
-        :class="{'dg-icon-view-active':passwordVisible}" 
+        :class="{ 'dg-icon-view-active': passwordVisible }"
         v-if="value && showPassword"
         @click="handlePwd"
-        ></i>
+      ></i>
     </span>
   </div>
 </template>
@@ -46,39 +52,39 @@ export default {
       type: String,
       default: ""
     },
-    clearable:{
-        type:Boolean,
-        default:false
+    clearable: {
+      type: Boolean,
+      default: false
     },
-    showPassword:{
-        type:Boolean,
-        default:false,
+    showPassword: {
+      type: Boolean,
+      default: false
     }
   },
-  
-  data(){
-      return {
-          passwordVisible:false
-      }
+
+  data() {
+    return {
+      passwordVisible: false
+    };
   },
-  computed:{
-      showSuffix(){
-          return this.clearable || this.showPassword;
-      },
-      inputType(){
-          const pType=this.passwordVisible?'text':'password';
-          return this.showPassword?pType:this.type;
-      }
+  computed: {
+    showSuffix() {
+      return this.clearable || this.showPassword;
+    },
+    inputType() {
+      const pType = this.passwordVisible ? "text" : "password";
+      return this.showPassword ? pType : this.type;
+    }
   },
   methods: {
     handleInput(e) {
       this.$emit("input", e.target.value);
     },
-    close(){
-        this.$emit('input','')
+    close() {
+      this.$emit("input", "");
     },
-    handlePwd(){
-        this.passwordVisible=!this.passwordVisible;
+    handlePwd() {
+      this.passwordVisible = !this.passwordVisible;
     }
   }
 };
@@ -139,11 +145,10 @@ export default {
       font-size: 14px;
       cursor: pointer;
       transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-      &.dg-icon-view-active{
-        color:blue;
+      &.dg-icon-view-active {
+        color: blue;
+      }
     }
-    }
-    
   }
 }
 </style>

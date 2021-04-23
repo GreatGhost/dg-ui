@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <CheckboxDemo></CheckboxDemo>
+    <FormDemo></FormDemo>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import InputDemo from "./examples/input";
 import SwitchDemo from "./examples/switch";
 import RadioDemo from "./examples/radio";
 import CheckboxDemo from "./examples/checkbox";
+import FormDemo from "./examples/form";
 export default {
   name: "App",
   data() {
@@ -28,7 +29,8 @@ export default {
     InputDemo,
     SwitchDemo,
     RadioDemo,
-    CheckboxDemo
+    CheckboxDemo,
+    FormDemo
   },
   methods: {
     login(e) {
