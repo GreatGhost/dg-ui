@@ -19,35 +19,35 @@
         </div>
     </div>
   </transition>
-  
+
 </template>
 <script>
 export default {
-  name: "DgDialog",
+  name: 'DgDialog',
   props: {
     title: {
       type: String,
-      default: "提示"
+      default: '提示'
     },
     width: {
       type: String,
-      default: "50%"
+      default: '50%'
     },
     top: {
       type: String,
-      default: "15vh"
+      default: '15vh'
     },
-    visible:{
-        type:Boolean,
-        default:false
+    visible: {
+      type: Boolean,
+      default: false
     }
   },
-  methods:{
-      handleClose(){
-          this.$emit('update:visible',false)
-      }
+  methods: {
+    handleClose () {
+      this.$emit('update:visible', false)
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
