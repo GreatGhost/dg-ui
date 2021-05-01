@@ -2,15 +2,15 @@
   "name": "grainrain-dg-ui",
   "version": "0.1.4",
   "private": false,
-  "main":"dist/grainrain-dg-ui.umd.min.js",
+  "main": "dist/grainrain-dg-ui.umd.min.js",
   "author": {
-      "name":"GreatGhost"
+    "name": "GreatGhost"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib":"vue-cli-service build --target lib packages/index.js"
+    "lib": "vue-cli-service build --target lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -23,11 +23,9 @@
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"

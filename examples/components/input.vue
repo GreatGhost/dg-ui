@@ -17,11 +17,7 @@
       @input="handleInput"
     />
     <span class="icon-suffix">
-      <i
-        class="iconfont iconclose"
-        v-if="value && clearable"
-        @click="close"
-      ></i>
+      <i class="iconfont iconclose" v-if="value && clearable" @click="close"></i>
       <i
         class="iconfont iconbrowse"
         :class="{ 'dg-icon-view-active': passwordVisible }"
@@ -34,15 +30,15 @@
 
 <script>
 export default {
-  name: "DgInput",
+  name: 'DgInput',
   props: {
     placeholder: {
       type: String,
-      default: ""
+      default: ''
     },
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     disabled: {
       type: Boolean,
@@ -50,7 +46,7 @@ export default {
     },
     value: {
       type: String,
-      default: ""
+      default: ''
     },
     clearable: {
       type: Boolean,
@@ -65,33 +61,35 @@ export default {
   data() {
     return {
       passwordVisible: false
-    };
+    }
   },
   computed: {
     showSuffix() {
-      return this.clearable || this.showPassword;
+      return this.clearable || this.showPassword
     },
     inputType() {
-      const pType = this.passwordVisible ? "text" : "password";
-      return this.showPassword ? pType : this.type;
+      const pType = this.passwordVisible ? 'text' : 'password'
+      return this.showPassword ? pType : this.type
     }
   },
   methods: {
     handleInput(e) {
-      this.$emit("input", e.target.value);
+      this.$emit('input', e.target.value)
     },
     close() {
-      this.$emit("input", "");
+      this.$emit('input', '')
     },
     handlePwd() {
-      this.passwordVisible = !this.passwordVisible;
+      this.passwordVisible = !this.passwordVisible
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .one-input {
+  font-size: 20px;
+
   width: 100%;
   position: relative;
   font-size: 14px;

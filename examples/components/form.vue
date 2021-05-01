@@ -6,21 +6,21 @@
 
 <script>
 export default {
-  name: "DgForm",
+  name: 'DgForm',
   props: {
     model: {
       type: Object,
-      require: true
+      require: true,
     },
     labelWidth: {
       type: String,
-      default: "80px"
-    }
+      default: '80px',
+    },
   },
   provide() {
     return {
-      Form: this
-    };
-  }
-};
+      Form: this,
+    }
+  },
+}
 </script>

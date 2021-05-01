@@ -5,21 +5,21 @@
 </template>
 
 <script>
-import ButtonDemos from "./examples/buttons";
-import DialogDemos from "./examples/dialog";
-import DemoSync from "./components/demo";
-import InputDemo from "./examples/input";
-import SwitchDemo from "./examples/switch";
-import RadioDemo from "./examples/radio";
-import CheckboxDemo from "./examples/checkbox";
-import FormDemo from "./examples/form";
+import ButtonDemos from './examples/buttons.vue';
+import DialogDemos from './examples/dialog';
+import DemoSync from './components/demo';
+import InputDemo from './examples/input';
+import SwitchDemo from './examples/switch';
+import RadioDemo from './examples/radio';
+import CheckboxDemo from './examples/checkbox';
+import FormDemo from './examples/form';
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
       money: 100,
       visible: false,
-      aShow: false
+      aShow: false,
     };
   },
   components: {
@@ -30,19 +30,19 @@ export default {
     SwitchDemo,
     RadioDemo,
     CheckboxDemo,
-    FormDemo
+    FormDemo,
   },
   methods: {
     login(e) {
-      console.log("单击事件", e);
+      console.log('单击事件', e);
     },
     fn1(e) {
       this.money = e;
     },
     fn2(e) {
       this.visible = e;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,10 +1,6 @@
 <template>
   <div class="one-form-item">
-    <label
-      class="one-form-item_label"
-      :style="{ width: this.Form.labelWidth }"
-      >{{ label }}</label
-    >
+    <label class="one-form-item_label" :style="{ width: this.Form.labelWidth }">{{ label }}</label>
     <div class="one-form-item_content">
       <slot></slot>
     </div>
@@ -13,15 +9,15 @@
 
 <script>
 export default {
-  name: "DgFormItem",
+  name: 'DgFormItem',
   props: {
     label: {
       type: String,
-      default: ""
-    }
+      default: '',
+    },
   },
-  inject: ["Form"]
-};
+  inject: ['Form'],
+}
 </script>
 
 <style lang="scss" scoped>

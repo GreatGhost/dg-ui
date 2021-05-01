@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: "DgCheckboxGroup",
+  name: 'DgCheckboxGroup',
   props: {
-    value: null
+    value: null,
   },
   provide() {
     return {
-      CheckboxGroup: this
-    };
-  }
-};
+      CheckboxGroup: this,
+    }
+  },
+}
 </script>
